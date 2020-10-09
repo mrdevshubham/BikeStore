@@ -21,7 +21,7 @@ namespace BikeStore.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_brandRepository.GetAllBrands());
+            return Ok(_brandRepository.GetAll());
         }
 
         [HttpGet("{Id}")]

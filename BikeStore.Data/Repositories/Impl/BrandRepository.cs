@@ -15,7 +15,7 @@ namespace BikeStore.Data.Repositories.Impl
             _dbContext = dbContext;
         }
 
-        IEnumerable<Brands> IBrandRepository.GetAllBrands()
+        IEnumerable<Brands> IBrandRepository.GetAll()
         {
             List<Brands> Items = _dbContext.Brands.ToList();
             return Items;
@@ -26,7 +26,7 @@ namespace BikeStore.Data.Repositories.Impl
             return _dbContext.Brands.Where(c => c.BrandId == Id).FirstOrDefault();
         }
 
-        public Brands AddNewBrand(Brands brand)
+        public Brands Add(Brands brand)
         {
             _dbContext.Set<Brands>().Add(brand);
             _dbContext.SaveChanges();
@@ -34,7 +34,7 @@ namespace BikeStore.Data.Repositories.Impl
             return brand;
         }
 
-        public bool DeleteBrand(int Id)
+        public bool Delete(int Id)
         {
             try
             {

@@ -1,13 +1,13 @@
-﻿using BikeStore.Data.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BikeStore.Data.Models;
 
 namespace BikeStore.Data.Repositories.Impl
 {
-    public class CategoriesRepository : ICategoriesRepository
+    public class OrderRepository : IOrderRepository
     {
-        public Categories Add(Categories categories)
+        public Orders Add(Orders orders)
         {
             throw new NotImplementedException();
         }
@@ -17,12 +17,12 @@ namespace BikeStore.Data.Repositories.Impl
             throw new NotImplementedException();
         }
 
-        public Categories FinById(int Id)
+        public Orders FinById(int Id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Categories> GetAll()
+        public IEnumerable<Orders> GetAll()
         {
             throw new NotImplementedException();
         }

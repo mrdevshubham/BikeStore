@@ -7,7 +7,9 @@ namespace BikeStore.Data.Repositories
 {
     public interface IProductsRepository
     {
-
-        List<Products> GetAllProducts();
+        IEnumerable<Products> GetAll();
+        Products FinById(int Id);
+        Products Add(Products products);
+        bool Delete(int Id);
     }
 }

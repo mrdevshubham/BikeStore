@@ -7,11 +7,10 @@ namespace BikeStore.Data.Repositories
 {
     public interface ICategoriesRepository
     {
-        IEnumerable<Categories> GetAllCategories();
-
+        IEnumerable<Categories> GetAll();
         Categories FinById(int Id);
-        Categories AddNewCategory(Categories categories);
-        bool DeleteCategory(int Id);
+        Categories Add(Categories categories);
+        bool Delete(int Id);
 
     }
 }

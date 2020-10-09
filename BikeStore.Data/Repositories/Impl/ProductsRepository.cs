@@ -13,7 +13,22 @@ namespace BikeStore.Data.Repositories.Impl
             _context = bikeStoreDbContext;
         }
 
-        public List<Products> GetAllProducts()
+        public Products Add(Products products)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool Delete(int Id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public Products FinById(int Id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public List<Products> GetAll()
         {
             List<Products> Products = new List<Products>();
 
@@ -47,6 +62,11 @@ namespace BikeStore.Data.Repositories.Impl
 
             return Products;
 
+        }
+
+        IEnumerable<Products> IProductsRepository.GetAll()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
