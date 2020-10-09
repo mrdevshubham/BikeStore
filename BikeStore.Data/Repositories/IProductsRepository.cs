@@ -5,11 +5,8 @@ using System.Text;
 
 namespace BikeStore.Data.Repositories
 {
-    public interface IProductsRepository
+    public interface IProductsRepository : IGenericRepository<Products>
     {
-        IEnumerable<Products> GetAll();
-        Products FinById(int Id);
-        Products Add(Products products);
-        bool Delete(int Id);
+
     }
 }

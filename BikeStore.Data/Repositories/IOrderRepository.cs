@@ -5,11 +5,8 @@ using System.Text;
 
 namespace BikeStore.Data.Repositories
 {
-    public interface IOrderRepository
+    public interface IOrderRepository : IGenericRepository<Orders>
     {
-        IEnumerable<Orders> GetAll();
-        Orders FinById(int Id);
-        Orders Add(Orders orders);
-        bool Delete(int Id);
+
     }
 }

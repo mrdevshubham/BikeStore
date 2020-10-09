@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BikeStore.Data.Models
 {
-    public partial class Products
+    public partial class Products : BaseEntity
     {
         public Products()
         {
@@ -11,7 +11,6 @@ namespace BikeStore.Data.Models
             Stocks = new HashSet<Stocks>();
         }
 
-        public int ProductId { get; set; }
         public string ProductName { get; set; }
         public int BrandId { get; set; }
         public int CategoryId { get; set; }

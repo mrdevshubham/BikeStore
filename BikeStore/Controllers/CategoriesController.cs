@@ -27,7 +27,7 @@ namespace BikeStore.Controllers
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
-            return Ok(_categoriesRepository.FinById(Id));
+            return Ok(_categoriesRepository.GetById(Id));
         }
     }
 }

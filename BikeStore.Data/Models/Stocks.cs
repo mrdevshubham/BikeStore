@@ -3,9 +3,8 @@ using System.Collections.Generic;
 
 namespace BikeStore.Data.Models
 {
-    public partial class Stocks
+    public partial class Stocks : BaseEntity
     {
-        public int StoreId { get; set; }
         public int ProductId { get; set; }
         public int? Quantity { get; set; }
 

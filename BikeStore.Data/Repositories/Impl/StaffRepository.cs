@@ -5,26 +5,13 @@ using BikeStore.Data.Models;
 
 namespace BikeStore.Data.Repositories.Impl
 {
-    public class StaffRepository : IStaffRepository
+    public class StaffRepository : GenericRepository<Staffs>, IStaffRepository
     {
-        public Staffs Add(Staffs staffs)
+        private BikeStoresContext _dbContext;
+        public StaffRepository(BikeStoresContext dbContext) : base(dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
         }
 
-        public bool Delete(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Staffs FinById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Staffs> GetAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

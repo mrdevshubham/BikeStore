@@ -5,26 +5,13 @@ using System.Text;
 
 namespace BikeStore.Data.Repositories.Impl
 {
-    public class CategoriesRepository : ICategoriesRepository
+    public class CategoriesRepository : GenericRepository<Categories>, ICategoriesRepository
     {
-        public Categories Add(Categories categories)
+        private BikeStoresContext _dbContext;
+        public CategoriesRepository(BikeStoresContext dbContext): base(dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
         }
 
-        public bool Delete(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Categories FinById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Categories> GetAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

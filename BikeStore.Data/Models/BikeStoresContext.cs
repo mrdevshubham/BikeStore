@@ -38,10 +38,10 @@ namespace BikeStore.Data.Models
         {
             modelBuilder.Entity<Brands>(entity =>
             {
-                entity.HasKey(e => e.BrandId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK__Brands__5E5A8E27FCCB65CD");
 
-                entity.Property(e => e.BrandId).HasColumnName("brand_id");
+                entity.Property(e => e.Id).HasColumnName("brand_id");
 
                 entity.Property(e => e.BrandName)
                     .IsRequired()
@@ -52,10 +52,10 @@ namespace BikeStore.Data.Models
 
             modelBuilder.Entity<Categories>(entity =>
             {
-                entity.HasKey(e => e.CategoryId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK__Categori__D54EE9B40DFC339B");
 
-                entity.Property(e => e.CategoryId).HasColumnName("category_id");
+                entity.Property(e => e.Id).HasColumnName("category_id");
 
                 entity.Property(e => e.CategoryName)
                     .IsRequired()
@@ -66,10 +66,10 @@ namespace BikeStore.Data.Models
 
             modelBuilder.Entity<Customers>(entity =>
             {
-                entity.HasKey(e => e.CustomerId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK__Customer__CD65CB85E936C633");
 
-                entity.Property(e => e.CustomerId).HasColumnName("customer_id");
+                entity.Property(e => e.Id).HasColumnName("customer_id");
 
                 entity.Property(e => e.City)
                     .HasColumnName("city")
@@ -117,12 +117,12 @@ namespace BikeStore.Data.Models
 
             modelBuilder.Entity<OrderItems>(entity =>
             {
-                entity.HasKey(e => new { e.OrderId, e.ItemId })
+                entity.HasKey(e => new { e.Id, e.ItemId })
                     .HasName("PK__Order_It__837942D4E0476CD1");
 
                 entity.ToTable("Order_Items");
 
-                entity.Property(e => e.OrderId).HasColumnName("order_id");
+                entity.Property(e => e.Id).HasColumnName("order_id");
 
                 entity.Property(e => e.ItemId).HasColumnName("item_id");
 
@@ -134,27 +134,27 @@ namespace BikeStore.Data.Models
                     .HasColumnName("list_price")
                     .HasColumnType("decimal(10, 2)");
 
-                entity.Property(e => e.ProductId).HasColumnName("product_id");
+                entity.Property(e => e.Id).HasColumnName("product_id");
 
                 entity.Property(e => e.Quantity).HasColumnName("quantity");
 
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderItems)
-                    .HasForeignKey(d => d.OrderId)
+                    .HasForeignKey(d => d.Id)
                     .HasConstraintName("FK__Order_Ite__order__4D94879B");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.OrderItems)
-                    .HasForeignKey(d => d.ProductId)
+                    .HasForeignKey(d => d.Id)
                     .HasConstraintName("FK__Order_Ite__produ__4E88ABD4");
             });
 
             modelBuilder.Entity<Orders>(entity =>
             {
-                entity.HasKey(e => e.OrderId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK__Orders__465962296087DE10");
 
-                entity.Property(e => e.OrderId).HasColumnName("order_id");
+                entity.Property(e => e.Id).HasColumnName("order_id");
 
                 entity.Property(e => e.CustomerId).HasColumnName("customer_id");
 
@@ -172,7 +172,7 @@ namespace BikeStore.Data.Models
                     .HasColumnName("shipped_date")
                     .HasColumnType("date");
 
-                entity.Property(e => e.StaffId).HasColumnName("staff_id");
+                entity.Property(e => e.Id).HasColumnName("staff_id");
 
                 entity.Property(e => e.StoreId).HasColumnName("store_id");
 
@@ -184,7 +184,7 @@ namespace BikeStore.Data.Models
 
                 entity.HasOne(d => d.Staff)
                     .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.StaffId)
+                    .HasForeignKey(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__Orders__staff_id__49C3F6B7");
 
@@ -196,10 +196,10 @@ namespace BikeStore.Data.Models
 
             modelBuilder.Entity<Products>(entity =>
             {
-                entity.HasKey(e => e.ProductId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK__Products__47027DF50E6000B6");
 
-                entity.Property(e => e.ProductId).HasColumnName("product_id");
+                entity.Property(e => e.Id).HasColumnName("product_id");
 
                 entity.Property(e => e.BrandId).HasColumnName("brand_id");
 
@@ -230,14 +230,14 @@ namespace BikeStore.Data.Models
 
             modelBuilder.Entity<Staffs>(entity =>
             {
-                entity.HasKey(e => e.StaffId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK__Staffs__1963DD9C6B6538DB");
 
                 entity.HasIndex(e => e.Email)
                     .HasName("UQ__Staffs__AB6E616443790457")
                     .IsUnique();
 
-                entity.Property(e => e.StaffId).HasColumnName("staff_id");
+                entity.Property(e => e.Id).HasColumnName("staff_id");
 
                 entity.Property(e => e.Active).HasColumnName("active");
 
@@ -266,7 +266,7 @@ namespace BikeStore.Data.Models
                     .HasMaxLength(25)
                     .IsUnicode(false);
 
-                entity.Property(e => e.StoreId).HasColumnName("store_id");
+                entity.Property(e => e.Id).HasColumnName("store_id");
 
                 entity.HasOne(d => d.Manager)
                     .WithMany(p => p.InverseManager)
@@ -275,38 +275,38 @@ namespace BikeStore.Data.Models
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Staffs)
-                    .HasForeignKey(d => d.StoreId)
+                    .HasForeignKey(d => d.Id)
                     .HasConstraintName("FK__Staffs__store_id__440B1D61");
             });
 
             modelBuilder.Entity<Stocks>(entity =>
             {
-                entity.HasKey(e => new { e.StoreId, e.ProductId })
+                entity.HasKey(e => new { e.Id, e.ProductId })
                     .HasName("PK__Stocks__E68284D32D599E4F");
 
-                entity.Property(e => e.StoreId).HasColumnName("store_id");
+                entity.Property(e => e.Id).HasColumnName("store_id");
 
-                entity.Property(e => e.ProductId).HasColumnName("product_id");
+                entity.Property(e => e.Id).HasColumnName("product_id");
 
                 entity.Property(e => e.Quantity).HasColumnName("quantity");
 
                 entity.HasOne(d => d.Product)
                     .WithMany(p => p.Stocks)
-                    .HasForeignKey(d => d.ProductId)
+                    .HasForeignKey(d => d.Id)
                     .HasConstraintName("FK__Stocks__product___52593CB8");
 
                 entity.HasOne(d => d.Store)
                     .WithMany(p => p.Stocks)
-                    .HasForeignKey(d => d.StoreId)
+                    .HasForeignKey(d => d.Id)
                     .HasConstraintName("FK__Stocks__store_id__5165187F");
             });
 
             modelBuilder.Entity<Stores>(entity =>
             {
-                entity.HasKey(e => e.StoreId)
+                entity.HasKey(e => e.Id)
                     .HasName("PK__Stores__A2F2A30C27050BA7");
 
-                entity.Property(e => e.StoreId).HasColumnName("store_id");
+                entity.Property(e => e.Id).HasColumnName("store_id");
 
                 entity.Property(e => e.City)
                     .HasColumnName("city")

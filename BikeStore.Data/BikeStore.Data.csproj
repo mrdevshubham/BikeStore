@@ -12,8 +12,6 @@
 
   <ItemGroup>
     <Compile Remove="BikeStoreDbContext.cs" />
-    <Compile Remove="Repositories\IGenericRepository.cs" />
-    <Compile Remove="Repositories\Impl\GenericRepository.cs" />
   </ItemGroup>
 
   <ItemGroup>

@@ -5,68 +5,49 @@ using System.Linq;
 
 namespace BikeStore.Data.Repositories.Impl
 {
-    public class ProductsRepository : IProductsRepository
+    public class ProductsRepository : GenericRepository<Products>, IProductsRepository
     {
         private BikeStoresContext _context;
-        public ProductsRepository(BikeStoresContext bikeStoreDbContext)
+        public ProductsRepository(BikeStoresContext bikeStoreDbContext) : base(bikeStoreDbContext)
         {
             _context = bikeStoreDbContext;
         }
 
-        public Products Add(Products products)
-        {
-            throw new System.NotImplementedException();
-        }
 
-        public bool Delete(int Id)
-        {
-            throw new System.NotImplementedException();
-        }
+        //public List<Products> GetAll()
+        //{
+        //    List<Products> Products = new List<Products>();
 
-        public Products FinById(int Id)
-        {
-            throw new System.NotImplementedException();
-        }
+        //    //Products = _context.Products
+        //    //                    .Select(x => new Products
+        //    //                    {
+        //    //                        ProductId = x.ProductId,
+        //    //                        Brand = new Brands
+        //    //                        {
+        //    //                            Products = x.Brand.Products
+        //    //                        }
+        //    //                    }).ToList();
 
-        public List<Products> GetAll()
-        {
-            List<Products> Products = new List<Products>();
+        //    Products = _context.Products
+        //        .Join(
+        //                _context.Brands,
+        //                product => product.BrandId,
+        //                brand => brand.Id,
+        //                (product, brand) => new Products
+        //                {
 
-            //Products = _context.Products
-            //                    .Select(x => new Products
-            //                    {
-            //                        ProductId = x.ProductId,
-            //                        Brand = new Brands
-            //                        {
-            //                            Products = x.Brand.Products
-            //                        }
-            //                    }).ToList();
+        //                    Id = product.Id,
+        //                    Brand = new Brands
+        //                    {
+        //                        //BrandId = brand.BrandId,
+        //                        BrandName = brand.BrandName
+        //                    }
 
-            Products = _context.Products
-                .Join(
-                        _context.Brands,
-                        product => product.BrandId,
-                        brand => brand.BrandId,
-                        (product, brand) => new Products
-                        {
-
-                            ProductId = product.ProductId,
-                            Brand = new Brands
-                            {
-                                //BrandId = brand.BrandId,
-                                BrandName = brand.BrandName
-                            }
-
-                        }).ToList();
+        //                }).ToList();
 
 
-            return Products;
+        //    return Products;
 
-        }
-
-        IEnumerable<Products> IProductsRepository.GetAll()
-        {
-            throw new System.NotImplementedException();
-        }
+        //}
     }
 }

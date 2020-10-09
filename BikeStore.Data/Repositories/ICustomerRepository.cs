@@ -5,11 +5,7 @@ using System.Text;
 
 namespace BikeStore.Data.Repositories
 {
-    public interface ICustomerRepository
+    public interface ICustomerRepository : IGenericRepository<Customers>
     {
-        IEnumerable<Customers> GetAll();
-        Customers FinById(int Id);
-        Customers Add(Customers customers);
-        bool Delete(int Id);
     }
 }

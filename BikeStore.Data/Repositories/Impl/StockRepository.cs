@@ -5,26 +5,13 @@ using BikeStore.Data.Models;
 
 namespace BikeStore.Data.Repositories.Impl
 {
-    public class StockRepository : IStockRepository
+    public class StockRepository : GenericRepository<Stocks>, IStockRepository
     {
-        public Stocks Add(Stocks stocks)
+        private BikeStoresContext _dbContext;
+        public StockRepository(BikeStoresContext dbContext) : base(dbContext)
         {
-            throw new NotImplementedException();
+            _dbContext = dbContext;
         }
 
-        public bool Delete(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Stocks FinById(int Id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Stocks> GetAll()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

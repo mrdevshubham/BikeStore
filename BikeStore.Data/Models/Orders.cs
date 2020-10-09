@@ -3,14 +3,13 @@ using System.Collections.Generic;
 
 namespace BikeStore.Data.Models
 {
-    public partial class Orders
+    public partial class Orders : BaseEntity
     {
         public Orders()
         {
             OrderItems = new HashSet<OrderItems>();
         }
 
-        public int OrderId { get; set; }
         public int? CustomerId { get; set; }
         public byte OrderStatus { get; set; }
         public DateTime OrderDate { get; set; }

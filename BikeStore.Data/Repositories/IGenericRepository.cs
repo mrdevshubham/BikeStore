@@ -1,15 +1,15 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
+﻿using BikeStore.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BikeStore.Data.Repositories
 {
-    public interface IGenericRepository<T> where T : DbSet<T>
+    public interface IGenericRepository<T> where T : BaseEntity
     {
         IEnumerable<T> GetAll();
-
-        IEnumerable<T> GetById(int Id);
+        T GetById(int Id);
+        T Add(T brand);
+        bool Delete(int Id);
 
 
     }

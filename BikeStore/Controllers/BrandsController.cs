@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BikeStore.Data.Models;
 using BikeStore.Data.Repositories;
+using BikeStore.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -27,7 +29,24 @@ namespace BikeStore.Controllers
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
-            return Ok(_brandRepository.FinById(Id));
+            return Ok(_brandRepository.GetById(Id));
+        }
+
+        [HttpPost]
+        public IActionResult Post(BrandRequestModel brandRequestModel)
+        {
+            Brands brand = new Brands
+            {
+                BrandName = brandRequestModel.BrandName
+            };
+
+            return Ok(_brandRepository.Add(brand));
+        }
+
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(int Id)
+        {
+            return Ok(_brandRepository.Delete(Id));
         }
 
 
