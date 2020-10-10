@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using BikeStore.Business.Service;
 using BikeStore.Data.Models;
 using BikeStore.Data.Repositories;
 using BikeStore.Data.Repositories.UnitOfWork;
@@ -15,39 +17,36 @@ namespace BikeStore.Controllers
     [ApiController]
     public class CategoriesController : ControllerBase
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public CategoriesController(IUnitOfWork unitOfWork)
+        private readonly ICategoryService _categoryService;
+        private readonly IMapper _mapper;
+        public CategoriesController(ICategoryService categoryService, IMapper mapper)
         {
-            this._unitOfWork = unitOfWork;
+            this._categoryService = categoryService;
+            this._mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_unitOfWork.CategoriesRepository.GetAll());
+            return Ok(_categoryService.GetAll());
         }
 
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
-            return Ok(_unitOfWork.CategoriesRepository.GetById(Id));
+            return Ok(_categoryService.GetById(Id));
         }
 
         [HttpPost]
         public IActionResult Post(CategoryRequestModel categoryRequestModel)
         {
-            Categories category = new Categories { CategoryName = categoryRequestModel.CategoryName };
-            _unitOfWork.CategoriesRepository.Add(category);
-            var Result = _unitOfWork.Complete();
-            return Ok(category);
+            return Ok(_categoryService.Add(_mapper.Map<Categories>(categoryRequestModel)));
         }
 
         [HttpDelete("{Id}")]
         public IActionResult Delete(int Id)
         {
-            _unitOfWork.CategoriesRepository.Delete(Id);
-            _unitOfWork.Complete();
-            return Ok("Record Deleted Successfully...");
+            return Ok(_categoryService.Delete(Id));
         }
     }
 

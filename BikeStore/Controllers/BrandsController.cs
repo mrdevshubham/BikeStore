@@ -1,4 +1,5 @@
-﻿using BikeStore.Business.Service;
+﻿using AutoMapper;
+using BikeStore.Business.Service;
 using BikeStore.Data.Models;
 using BikeStore.Data.Repositories.UnitOfWork;
 using BikeStore.Model.Request;
@@ -11,9 +12,11 @@ namespace BikeStore.Controllers
     public class BrandsController : ControllerBase
     {
         private readonly IBrandService _brandService;
-        public BrandsController(IBrandService brandService)
+        private readonly IMapper _mapper;
+        public BrandsController(IBrandService brandService, IMapper mapper)
         {
             this._brandService = brandService;
+            this._mapper = mapper;
         }
 
         [HttpGet]
@@ -31,7 +34,7 @@ namespace BikeStore.Controllers
         [HttpPost]
         public IActionResult Post(BrandRequestModel brandRequestModel)
         {
-            return Ok(_brandService.Add(brandRequestModel));
+            return Ok(_brandService.Add(_mapper.Map<Brands>(brandRequestModel)));
         }
 
         [HttpDelete("{Id}")]

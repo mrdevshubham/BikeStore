@@ -26,9 +26,8 @@ namespace BikeStore.Business.Service.Impl
             return _unitOfWork.BrandRepository.GetById(Id);
         }
 
-        public Brands Add(BrandRequestModel brandRequestModel)
+        public Brands Add(Brands brand)
         {
-            Brands brand = new Brands { BrandName = brandRequestModel.BrandName };
             _unitOfWork.BrandRepository.Add(brand);
             var Result = _unitOfWork.Complete();
 

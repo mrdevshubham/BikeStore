@@ -6,11 +6,11 @@ using System.Text;
 
 namespace BikeStore.Business.Service
 {
-    public interface IBrandService
+    public interface IStoreService
     {
-        IEnumerable<Brands> GetAll();
-        Brands GetById(int Id);
-        Brands Add(Brands brand);
+        IEnumerable<Stores> GetAll();
+        Stores GetById(int Id);
+        Stores Add(Stores store);
         bool Delete(int Id);
     }
 }

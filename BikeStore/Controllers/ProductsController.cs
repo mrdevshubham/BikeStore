@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using BikeStore.Business.Service;
 using BikeStore.Data.Models;
 using BikeStore.Data.Repositories.UnitOfWork;
 using BikeStore.Model.Request;
@@ -14,46 +16,36 @@ namespace BikeStore.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public ProductsController(IUnitOfWork unitOfWork)
+        private readonly IProductService _productsService;
+        private readonly IMapper _mapper;
+        public ProductsController(IProductService productsService, IMapper mapper)
         {
-            this._unitOfWork = unitOfWork;
+            this._productsService = productsService;
+            this._mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_unitOfWork.ProductsRepository.GetAll());
+            return Ok(_productsService.GetAll());
         }
 
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
-            return Ok(_unitOfWork.ProductsRepository.GetById(Id));
+            return Ok(_productsService.GetById(Id));
         }
 
         [HttpPost]
         public IActionResult Post(ProductRequestModel productRequestModel)
         {
-            Products product = new Products 
-            {
-                ProductName = productRequestModel.ProductName,
-                BrandId = productRequestModel.BrandId,
-                CategoryId = productRequestModel.CategoryId,
-                ModelYear = productRequestModel.ModelYear,
-                ListPrice = productRequestModel.ListPrice
-            };
-            _unitOfWork.ProductsRepository.Add(product);
-            var Result = _unitOfWork.Complete();
-            return Ok(product);
+            return Ok(_productsService.Add(_mapper.Map<Products>(productRequestModel)));
         }
 
         [HttpDelete("{Id}")]
         public IActionResult Delete(int Id)
         {
-            _unitOfWork.ProductsRepository.Delete(Id);
-            _unitOfWork.Complete();
-            return Ok("Record Deleted Successfully...");
+            return Ok(_productsService.Delete(Id));
         }
 
     }

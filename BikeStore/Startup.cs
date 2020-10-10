@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using BikeStore.Data.Models;
 using BikeStore.Extensions;
 using Microsoft.AspNetCore.Builder;
@@ -29,10 +30,11 @@ namespace BikeStore
                 options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnectionString"]);
             });
 
-            services.GetBikeStoreRepositories();
-            services.GetBikeStoreServices();
+            services.GetBikeStoreRepositoryServices();
+            services.GetBikeStoreCoreServices();
 
             services.AddControllers();
+            services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

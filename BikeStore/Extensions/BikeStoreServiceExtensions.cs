@@ -14,7 +14,7 @@ namespace BikeStore.Extensions
     public static class BikeStoreServiceExtensions
     {
 
-        public static IServiceCollection GetBikeStoreRepositories(this IServiceCollection services)
+        public static IServiceCollection GetBikeStoreRepositoryServices(this IServiceCollection services)
         {
             services.AddTransient<IBrandRepository, BrandRepository>();
             services.AddTransient<IProductsRepository, ProductsRepository>();
@@ -22,9 +22,13 @@ namespace BikeStore.Extensions
             return services;
         }
 
-        public static IServiceCollection GetBikeStoreServices(this IServiceCollection services)
+        public static IServiceCollection GetBikeStoreCoreServices(this IServiceCollection services)
         {
             services.AddTransient<IBrandService, BrandService>();
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IStoreService, StoreService>();
+
             return services;
         }
 

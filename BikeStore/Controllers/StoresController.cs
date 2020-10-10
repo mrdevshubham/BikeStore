@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BikeStore.Data.Repositories.UnitOfWork;
-using Microsoft.AspNetCore.Http;
+using AutoMapper;
+using BikeStore.Business.Service;
+using BikeStore.Data.Models;
+using BikeStore.Model.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BikeStore.Controllers
@@ -12,22 +14,36 @@ namespace BikeStore.Controllers
     [ApiController]
     public class StoresController : ControllerBase
     {
-        private readonly IUnitOfWork _unitOfWork;
-        public StoresController(IUnitOfWork unitOfWork)
+        private readonly IStoreService _storeService;
+        private readonly IMapper _mapper;
+        public StoresController(IStoreService storeService, IMapper mapper)
         {
-            this._unitOfWork = unitOfWork;
+            this._storeService = storeService;
+            this._mapper = mapper;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_unitOfWork.StoreRepository.GetAll());
+            return Ok(_storeService.GetAll());
         }
 
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
-            return Ok(_unitOfWork.StoreRepository.GetById(Id));
+            return Ok(_storeService.GetById(Id));
+        }
+
+        [HttpPost]
+        public IActionResult Post(StoreRequestModel storeRequestModel)
+        {
+            return Ok(_storeService.Add(_mapper.Map<Stores>(storeRequestModel)));
+        }
+
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(int Id)
+        {
+            return Ok(_storeService.Delete(Id) ? "Record Deleted Successfully..." : "");
         }
 
     }
