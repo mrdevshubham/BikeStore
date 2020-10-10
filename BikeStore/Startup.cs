@@ -29,7 +29,8 @@ namespace BikeStore
                 options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnectionString"]);
             });
 
-            services.GetRepositoryServices();
+            services.GetBikeStoreRepositories();
+            services.GetBikeStoreServices();
 
             services.AddControllers();
         }

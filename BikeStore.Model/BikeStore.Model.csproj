@@ -5,8 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BikeStore.Data\BikeStore.Data.csproj" />
-    <ProjectReference Include="..\BikeStore.Model\BikeStore.Model.csproj" />
+    <Folder Include="Response\" />
   </ItemGroup>
 
 </Project>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BikeStore.Data.Models;
+using BikeStore.Data.Repositories.Generic;
 
 namespace BikeStore.Data.Repositories.Impl
 {

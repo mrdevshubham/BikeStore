@@ -3,17 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29411.108
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStore", "BikeStore\BikeStore.csproj", "{05EF0040-15AB-4765-A9AB-E191D18C642F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeStore", "BikeStore\BikeStore.csproj", "{05EF0040-15AB-4765-A9AB-E191D18C642F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStore.Data", "BikeStore.Data\BikeStore.Data.csproj", "{A472F8A2-3E7C-4E5D-B831-C2D14C142FF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeStore.Data", "BikeStore.Data\BikeStore.Data.csproj", "{A472F8A2-3E7C-4E5D-B831-C2D14C142FF6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{15A3839A-BA1D-4D5D-B845-0C4EA6FEDF20}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStore.Business", "BikeStore.Business\BikeStore.Business.csproj", "{FA6B5940-ECF7-450F-AFB1-E474B61D81A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BikeStore.Business", "BikeStore.Business\BikeStore.Business.csproj", "{FA6B5940-ECF7-450F-AFB1-E474B61D81A3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business", "Business", "{9C8FA729-ECE2-48F8-8E02-F8DE113180BB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "API", "API", "{EA3CD6EA-9CE1-40FA-B68E-2EE0CD1B06D8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{35024AE2-CB15-47A7-9249-6DCB31A46C06}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BikeStore.Model", "BikeStore.Model\BikeStore.Model.csproj", "{F918D48E-0962-4AE4-AAB7-14626689F254}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,10 @@ Global
 		{FA6B5940-ECF7-450F-AFB1-E474B61D81A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA6B5940-ECF7-450F-AFB1-E474B61D81A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA6B5940-ECF7-450F-AFB1-E474B61D81A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F918D48E-0962-4AE4-AAB7-14626689F254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F918D48E-0962-4AE4-AAB7-14626689F254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F918D48E-0962-4AE4-AAB7-14626689F254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F918D48E-0962-4AE4-AAB7-14626689F254}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +49,7 @@ Global
 		{05EF0040-15AB-4765-A9AB-E191D18C642F} = {EA3CD6EA-9CE1-40FA-B68E-2EE0CD1B06D8}
 		{A472F8A2-3E7C-4E5D-B831-C2D14C142FF6} = {15A3839A-BA1D-4D5D-B845-0C4EA6FEDF20}
 		{FA6B5940-ECF7-450F-AFB1-E474B61D81A3} = {9C8FA729-ECE2-48F8-8E02-F8DE113180BB}
+		{F918D48E-0962-4AE4-AAB7-14626689F254} = {35024AE2-CB15-47A7-9249-6DCB31A46C06}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6A310A74-099D-4E6F-BD65-8FA061A1948D}

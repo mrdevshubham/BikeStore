@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BikeStore.Data.Models;
+using BikeStore.Data.Repositories.Generic;
 
 namespace BikeStore.Data.Repositories.Impl
 {

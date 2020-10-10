@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BikeStore.Business.Service;
 using BikeStore.Data.Models;
-using BikeStore.Data.Repositories;
-using BikeStore.Model;
-using Microsoft.AspNetCore.Http;
+using BikeStore.Data.Repositories.UnitOfWork;
+using BikeStore.Model.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BikeStore.Controllers
@@ -14,39 +10,34 @@ namespace BikeStore.Controllers
     [ApiController]
     public class BrandsController : ControllerBase
     {
-        private readonly IBrandRepository _brandRepository;
-        public BrandsController(IBrandRepository brandRepository)
+        private readonly IBrandService _brandService;
+        public BrandsController(IBrandService brandService)
         {
-            this._brandRepository = brandRepository;
+            this._brandService = brandService;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_brandRepository.GetAll());
+            return Ok(_brandService.GetAll());
         }
 
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)
         {
-            return Ok(_brandRepository.GetById(Id));
+            return Ok(_brandService.GetById(Id));
         }
 
         [HttpPost]
         public IActionResult Post(BrandRequestModel brandRequestModel)
         {
-            Brands brand = new Brands
-            {
-                BrandName = brandRequestModel.BrandName
-            };
-
-            return Ok(_brandRepository.Add(brand));
+            return Ok(_brandService.Add(brandRequestModel));
         }
 
         [HttpDelete("{Id}")]
         public IActionResult Delete(int Id)
         {
-            return Ok(_brandRepository.Delete(Id));
+            return Ok(_brandService.Delete(Id) ? "Record Deleted Successfully..." : "");
         }
 
 

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace BikeStore.Data.Repositories.Impl
+namespace BikeStore.Data.Repositories.Generic
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
@@ -18,21 +18,18 @@ namespace BikeStore.Data.Repositories.Impl
             _entity = _bikeStoresContext.Set<T>();
         }
 
-        public T Add(T entity)
+        public void Add(T entity)
         {
             _entity.Add(entity);
-            _bikeStoresContext.SaveChanges();
-            return entity;
         }
 
-        public bool Delete(int Id)
+        public void Delete(int Id)
         {
             try
             {
                 var entity = _entity.Where(c => c.Id == Id).FirstOrDefault();
                 _bikeStoresContext.Remove(entity);
-                _bikeStoresContext.SaveChanges();
-                return true;
+
             }
             catch (Exception)
             {

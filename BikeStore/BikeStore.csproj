@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Model\**" />
+    <Content Remove="Model\**" />
+    <EmbeddedResource Remove="Model\**" />
+    <None Remove="Model\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BikeStore.Business\BikeStore.Business.csproj" />
     <ProjectReference Include="..\BikeStore.Data\BikeStore.Data.csproj" />
+    <ProjectReference Include="..\BikeStore.Model\BikeStore.Model.csproj" />
   </ItemGroup>
 
 </Project>
