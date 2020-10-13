@@ -27,11 +27,7 @@ namespace BikeStore.Data.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder.UseSqlServer("Data Source = SHUBHAMJAIN02;Initial Catalog=BikeStores; user id=nagarro; password=nagarro");
-                optionsBuilder.UseLazyLoadingProxies();
-            }
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

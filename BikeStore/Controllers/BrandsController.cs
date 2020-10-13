@@ -3,6 +3,7 @@ using BikeStore.Business.Service;
 using BikeStore.Data.Models;
 using BikeStore.Data.Repositories.UnitOfWork;
 using BikeStore.Model.Request;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -10,6 +11,8 @@ namespace BikeStore.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
+    //[Authorize(Roles = "Admin")]
     public class BrandsController : ControllerBase
     {
         private readonly IBrandService _brandService;

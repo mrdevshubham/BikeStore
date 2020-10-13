@@ -8,6 +8,7 @@ using BikeStore.Data.Models;
 using BikeStore.Data.Repositories;
 using BikeStore.Data.Repositories.UnitOfWork;
 using BikeStore.Model.Request;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

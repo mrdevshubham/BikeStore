@@ -1,0 +1,178 @@
+10/12/2020 12:24:11 Application Starting Up...
+10/12/2020 12:24:13 Shubham :GET
+10/12/2020 12:24:14 HTTP "GET" "/weatherforecast" responded 200 in 1103.7463 ms
+10/12/2020 12:24:21 Shubham :GET
+10/12/2020 12:24:21 Get All Brands...
+10/12/2020 12:24:22 HTTP "GET" "/api/Brands/" responded 200 in 1080.9978 ms
+10/12/2020 14:04:27 Application Starting Up...
+10/12/2020 14:04:30 HTTP "GET" "/weatherforecast" responded 200 in 1343.7299 ms
+10/12/2020 14:05:31 HTTP "POST" "/api/Auth/Login" responded 500 in 11974.4414 ms
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+10/12/2020 14:05:31 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+10/12/2020 14:07:56 Application Starting Up...
+10/12/2020 14:07:59 HTTP "GET" "/weatherforecast" responded 200 in 1190.5411 ms
+10/12/2020 14:08:09 HTTP "POST" "/api/Auth/Login" responded 500 in 7624.1408 ms
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+10/12/2020 14:08:09 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+10/12/2020 14:09:35 Application Starting Up...
+10/12/2020 14:12:49 Application Starting Up...
+10/12/2020 14:12:52 HTTP "GET" "/weatherforecast" responded 200 in 1570.4342 ms
+10/12/2020 14:12:55 HTTP "POST" "/api/Auth/Login" responded 404 in 0.7750 ms
+10/12/2020 14:19:24 Application Starting Up...
+10/12/2020 14:19:29 HTTP "GET" "/weatherforecast" responded 200 in 1313.7192 ms
+10/12/2020 14:19:31 HTTP "POST" "/api/Auth/Login" responded 415 in 65.4224 ms
+10/12/2020 14:19:49 HTTP "POST" "/api/Auth/Login" responded 500 in 12302.4234 ms
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+10/12/2020 14:19:49 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultForbidScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ForbidAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ForbidResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResultFilterAsync>g__Awaited|29_0[TFilter,TFilterAsync](ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResultExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.ResultNext[TFilter,TFilterAsync](State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.InvokeResultFilters()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+10/12/2020 14:20:20 HTTP "POST" "/api/Auth/Login" responded 200 in 19843.6067 ms
+10/12/2020 14:23:23 Application Starting Up...
+10/12/2020 14:23:26 HTTP "GET" "/weatherforecast" responded 200 in 1251.3491 ms
+10/12/2020 14:25:39 HTTP "POST" "/api/Auth/Login" responded 200 in 369.7953 ms
+10/12/2020 14:25:42 HTTP "POST" "/api/Auth/Login" responded 200 in 7.6835 ms
+10/12/2020 14:26:35 HTTP "POST" "/api/Auth/Login" responded 200 in 9.3131 ms
+10/12/2020 14:26:43 HTTP "GET" "/api/Brands/" responded 500 in 14.8606 ms
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+10/12/2020 14:26:43 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+10/12/2020 14:27:16 HTTP "GET" "/api/Brands/" responded 500 in 21.2755 ms
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+10/12/2020 14:27:16 An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found. The default schemes can be set using either AddAuthentication(string defaultScheme) or AddAuthentication(Action<AuthenticationOptions> configureOptions).
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+10/12/2020 14:33:13 Application Starting Up...
+10/12/2020 14:33:16 HTTP "GET" "/weatherforecast" responded 200 in 1473.4240 ms
+10/12/2020 14:33:19 HTTP "GET" "/api/Brands/" responded 401 in 229.4664 ms
+10/12/2020 14:33:26 HTTP "POST" "/api/Auth/Login" responded 200 in 92.2335 ms
+10/12/2020 14:33:33 HTTP "GET" "/api/Brands/" responded 401 in 4.8681 ms
+10/12/2020 14:34:06 Application Starting Up...
+10/12/2020 14:34:09 HTTP "GET" "/weatherforecast" responded 200 in 1485.0897 ms
+10/12/2020 14:34:12 Get All Brands...
+10/12/2020 14:34:13 HTTP "GET" "/api/Brands/" responded 200 in 1380.5271 ms
+10/12/2020 14:57:19 HTTP "GET" "/api/Brands/" responded 401 in 35.1799 ms
+10/12/2020 14:57:23 HTTP "POST" "/api/Auth/Login" responded 200 in 92.4595 ms
+10/12/2020 14:57:30 Get All Brands...
+10/12/2020 14:57:30 HTTP "GET" "/api/Brands/" responded 200 in 63.4971 ms
+10/12/2020 15:08:02 Application Starting Up...
+10/12/2020 15:08:07 HTTP "GET" "/weatherforecast" responded 200 in 1431.6016 ms
+10/12/2020 15:08:20 HTTP "POST" "/api/Auth/Login" responded 200 in 9247.7561 ms
+10/12/2020 15:08:30 Get All Brands...
+10/12/2020 15:08:31 HTTP "GET" "/api/Brands/" responded 200 in 1099.9352 ms
+10/12/2020 15:11:14 Application Starting Up...
+10/12/2020 15:11:17 HTTP "GET" "/weatherforecast" responded 200 in 1427.5502 ms
+10/12/2020 15:11:20 HTTP "GET" "/api/Brands/" responded 403 in 285.7696 ms
+10/12/2020 15:11:24 HTTP "POST" "/api/Auth/Login" responded 200 in 74.8780 ms
+10/12/2020 15:11:32 HTTP "GET" "/api/Brands/" responded 403 in 8.8102 ms
+10/12/2020 15:11:34 HTTP "GET" "/api/Brands/" responded 403 in 3.6824 ms
+10/12/2020 15:12:00 Application Starting Up...
+10/12/2020 15:12:04 HTTP "GET" "/weatherforecast" responded 200 in 1470.7289 ms
+10/12/2020 15:12:08 Get All Brands...
+10/12/2020 15:12:08 HTTP "GET" "/api/Brands/" responded 200 in 1253.4653 ms
+10/12/2020 17:16:01 Application Starting Up...
+10/12/2020 17:16:04 HTTP "GET" "/weatherforecast" responded 200 in 1307.0848 ms
+10/12/2020 17:16:23 Get All Brands...
+10/12/2020 17:16:34 HTTP "GET" "/api/Brands/" responded 200 in 14705.6695 ms
+10/12/2020 17:16:41 Get All Brands...
+10/12/2020 17:16:41 HTTP "GET" "/api/Brands/" responded 200 in 287.7007 ms
+10/12/2020 17:17:50 HTTP "GET" "/api/Products/" responded 200 in 374.1774 ms
+10/12/2020 17:17:52 HTTP "GET" "/api/Products/" responded 200 in 291.8875 ms
+10/12/2020 17:17:58 HTTP "GET" "/api/Categories/" responded 200 in 273.9524 ms
+10/12/2020 17:18:06 HTTP "GET" "/api/Stores/" responded 200 in 266.2209 ms
+10/12/2020 17:45:18 HTTP "GET" "/api/Products/" responded 200 in 1812.8295 ms
+10/12/2020 17:45:23 HTTP "GET" "/api/Stores/" responded 200 in 243.8409 ms
+10/12/2020 17:45:30 HTTP "GET" "/api/Categories/" responded 200 in 244.2925 ms
+10/12/2020 17:59:08 Application Starting Up...
+10/12/2020 17:59:11 HTTP "GET" "/weatherforecast" responded 200 in 1577.1826 ms
+10/12/2020 17:59:59 Application Starting Up...
+10/12/2020 18:00:06 HTTP "GET" "/api/Products/" responded 200 in 4853.2205 ms
+10/12/2020 18:02:02 HTTP "GET" "/api/Stores/" responded 200 in 408.7357 ms
