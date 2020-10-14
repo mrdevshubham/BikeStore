@@ -8,7 +8,7 @@ namespace BikeStore.Business.Service
 {
     public interface IProductService
     {
-        IEnumerable<Products> GetAll();
+        IEnumerable<Products> GetAll(int Page, int TotalRecordsPerPage);
         Products GetById(int Id);
         Products Add(Products product);
         bool Delete(int Id);

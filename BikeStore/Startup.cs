@@ -96,6 +96,8 @@ namespace BikeStore
 
             app.UseRouting();
 
+            app.UseCors(options => options.AllowAnyOrigin());
+
             app.UseSerilogRequestLogging();
 
             /*For API security*/

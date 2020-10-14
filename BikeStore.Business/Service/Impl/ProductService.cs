@@ -35,9 +35,9 @@ namespace BikeStore.Business.Service.Impl
             return false;
         }
 
-        public IEnumerable<Products> GetAll()
+        public IEnumerable<Products> GetAll(int Page, int TotalRecordsPerPage)
         {
-            return _unitOfWork.ProductsRepository.GetAll();
+            return _unitOfWork.ProductsRepository.GetAll(Page, TotalRecordsPerPage);
         }
 
         public Products GetById(int Id)

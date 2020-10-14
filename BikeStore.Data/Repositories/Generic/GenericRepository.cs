@@ -42,6 +42,14 @@ namespace BikeStore.Data.Repositories.Generic
             return _entity.ToList();
         }
 
+        public IEnumerable<T> GetAll(int currentPage, int TotalRecorsPerPage)
+        {
+            return _entity
+                    .Skip(currentPage * TotalRecorsPerPage)
+                    .Take(TotalRecorsPerPage)
+                    .ToList();
+        }
+
         public T GetById(int Id)
         {
             return _entity.Find(Id);

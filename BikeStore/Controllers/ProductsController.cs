@@ -24,10 +24,10 @@ namespace BikeStore.Controllers
             this._mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult Get()
+        [HttpGet("{CurrentPage}/{TotalRecordsPerPage}")]
+        public IActionResult Get(int CurrentPage, int TotalRecordsPerPage)
         {
-            return Ok(_productsService.GetAll());
+            return Ok(_productsService.GetAll(CurrentPage, TotalRecordsPerPage));
         }
 
         [HttpGet("{Id}")]

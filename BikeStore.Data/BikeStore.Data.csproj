@@ -27,4 +27,8 @@
     <PackageReference Include="ServiceStack.Interfaces" Version="5.9.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Extension\" />
+  </ItemGroup>
+
 </Project>
