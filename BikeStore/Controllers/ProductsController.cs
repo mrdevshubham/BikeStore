@@ -6,6 +6,7 @@ using AutoMapper;
 using BikeStore.Business.Service;
 using BikeStore.Data.Models;
 using BikeStore.Data.Repositories.UnitOfWork;
+using BikeStore.Model.Filters;
 using BikeStore.Model.Request;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +35,12 @@ namespace BikeStore.Controllers
         public IActionResult Get(int Id)
         {
             return Ok(_productsService.GetById(Id));
+        }
+
+        [HttpGet("getproductsFiltered")]
+        public IActionResult Get([FromQuery]ProductsFilter productsFilter)
+        {
+            return Ok(_productsService.GetProductsFiltered(productsFilter));
         }
 
         [HttpPost]

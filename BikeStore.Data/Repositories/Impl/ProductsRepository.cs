@@ -1,5 +1,6 @@
 ﻿using BikeStore.Data.Models;
 using BikeStore.Data.Repositories.Generic;
+using BikeStore.Model.Filters;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,41 +15,55 @@ namespace BikeStore.Data.Repositories.Impl
             _context = bikeStoreDbContext;
         }
 
+        public IEnumerable<Products> GetProductsFiltered(ProductsFilter productsFilter)
+        {
+            IQueryable<Products> query = _context.Products;
 
-        //public List<Products> GetAll()
-        //{
-        //    List<Products> Products = new List<Products>();
+            if (!string.IsNullOrEmpty(productsFilter.productname))
+                query = query.Where(x => x.ProductName.Contains(productsFilter.productname));
+            if (productsFilter.brandid > 0)
+                query = query.Where(x => x.BrandId == productsFilter.brandid);
+            if (productsFilter.categoryid > 0)
+                query = query.Where(x => x.CategoryId == productsFilter.categoryid);
+            if (productsFilter.modelyearfrom > 0)
+                query = query.Where(x => x.ModelYear >= productsFilter.modelyearfrom);
+            if (productsFilter.modelyearto > 0)
+                query = query.Where(x => x.ModelYear <= productsFilter.modelyearto);
+            if (productsFilter.pricefrom > 0)
+                query = query.Where(x => x.ListPrice >= productsFilter.pricefrom);
+            if (productsFilter.priceto > 0)
+                query = query.Where(x => x.ListPrice <= productsFilter.priceto);
 
-        //    //Products = _context.Products
-        //    //                    .Select(x => new Products
-        //    //                    {
-        //    //                        ProductId = x.ProductId,
-        //    //                        Brand = new Brands
-        //    //                        {
-        //    //                            Products = x.Brand.Products
-        //    //                        }
-        //    //                    }).ToList();
+            query = query
+                    .Skip((productsFilter.currentpage - 1) * productsFilter.recordsperpage)
+                    .Take(productsFilter.recordsperpage);
 
-        //    Products = _context.Products
-        //        .Join(
-        //                _context.Brands,
-        //                product => product.BrandId,
-        //                brand => brand.Id,
-        //                (product, brand) => new Products
-        //                {
+            var Result = query.ToList();
 
-        //                    Id = product.Id,
-        //                    Brand = new Brands
-        //                    {
-        //                        //BrandId = brand.BrandId,
-        //                        BrandName = brand.BrandName
-        //                    }
+            return Result;
+        }
 
-        //                }).ToList();
+        public Products GetProductDetailsById(int Id)
+        {
+            var product = _context.Products
+                .Where(prod => prod.Id == Id)
+                .Select(x => new Products
+                {
+                    Id = x.Id,
+                    ProductName = x.ProductName,
+                    ModelYear = x.ModelYear,
+                    ListPrice = x.ListPrice,
+                    Brand = new Brands
+                    {
+                        BrandName = x.Brand.BrandName
+                    },
+                    Category = new Categories
+                    {
+                        CategoryName = x.Category.CategoryName
+                    }
+                }).FirstOrDefault();
 
-
-        //    return Products;
-
-        //}
+            return product;
+        }
     }
 }

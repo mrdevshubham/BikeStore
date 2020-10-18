@@ -28,7 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Extension\" />
+    <ProjectReference Include="..\BikeStore.Model\BikeStore.Model.csproj" />
   </ItemGroup>
 
 </Project>

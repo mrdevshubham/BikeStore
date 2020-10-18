@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using BikeStore.Data.Models;
 using BikeStore.Data.Repositories.UnitOfWork;
+using BikeStore.Model.Filters;
 using BikeStore.Model.Request;
+using BikeStore.Model.Response;
 
 namespace BikeStore.Business.Service.Impl
 {
@@ -42,7 +45,20 @@ namespace BikeStore.Business.Service.Impl
 
         public Products GetById(int Id)
         {
-            return _unitOfWork.ProductsRepository.GetById(Id);
+            return _unitOfWork.ProductsRepository.GetProductDetailsById(Id);
+        }
+
+        public BaseFilterResponse<Products> GetProductsFiltered(ProductsFilter productsFilter)
+        {
+            BaseFilterResponse<Products> objResponse = new BaseFilterResponse<Products> 
+            {
+                PageNumber = productsFilter.currentpage,
+                PageSize = productsFilter.recordsperpage,
+                TotalRecords = _unitOfWork.ProductsRepository.GetAll().Count(),
+                data = _unitOfWork.ProductsRepository.GetProductsFiltered(productsFilter)
+            };
+            
+            return objResponse;
         }
     }
 }

@@ -56,7 +56,11 @@ namespace BikeStore
                     };
                 });
 
-            services.AddControllers();
+            //services.AddControllers();
+            services.AddControllersWithViews()
+                .AddNewtonsoftJson(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                );
             services.AddAutoMapper(typeof(Startup));
         }
 
