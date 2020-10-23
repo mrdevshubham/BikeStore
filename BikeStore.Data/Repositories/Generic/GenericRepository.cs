@@ -1,4 +1,5 @@
-﻿using BikeStore.Data.Models;
+﻿using BikeStore.Data.Expressions;
+using BikeStore.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,9 @@ namespace BikeStore.Data.Repositories.Generic
             try
             {
                 var entity = _entity.Where(c => c.Id == Id).FirstOrDefault();
-                _bikeStoresContext.Remove(entity);
+
+                if (entity != null)
+                    _bikeStoresContext.Remove(entity);
 
             }
             catch (Exception)
@@ -53,6 +56,16 @@ namespace BikeStore.Data.Repositories.Generic
         public T GetById(int Id)
         {
             return _entity.Find(Id);
+        }
+
+        private IQueryable<T> ApplySpecifications(IQueryable<T> entity, ExpressionBase<T> exp)
+        {
+            if (exp.WhereClauses != null)
+            {
+                entity.Where(exp.WhereClauses);
+            }
+
+            return entity;
         }
     }
 }

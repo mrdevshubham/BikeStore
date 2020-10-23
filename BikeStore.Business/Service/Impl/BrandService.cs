@@ -28,11 +28,14 @@ namespace BikeStore.Business.Service.Impl
 
         public Brands Add(Brands brand)
         {
-            _unitOfWork.BrandRepository.Add(brand);
-            var Result = _unitOfWork.Complete();
+            if (_unitOfWork.BrandRepository.GetByName(brand.BrandName) == null)
+            {
+                _unitOfWork.BrandRepository.Add(brand);
+                var Result = _unitOfWork.Complete();
 
-            if (Result == 1)
-                return brand;
+                if (Result == 1)
+                    return brand;
+            }
             return null;
         }
 

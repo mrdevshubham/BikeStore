@@ -15,6 +15,10 @@ namespace BikeStore.Data.Repositories.Impl
         {
             _dbContext = dbContext;
         }
-        
+
+        public Brands GetByName(string brandName)
+        {
+            return _dbContext.Brands.Where(x => x.BrandName == brandName).FirstOrDefault();
+        }
     }
 }
