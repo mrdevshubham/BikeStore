@@ -20,5 +20,17 @@ namespace BikeStore.Data.Repositories.Impl
         {
             return _dbContext.Brands.Where(x => x.BrandName == brandName).FirstOrDefault();
         }
+
+        public bool UpdateBrand(int Id, string brandName)
+        {
+            var Brand = base.GetById(Id);
+            if (Brand != null)
+            {
+                Brand.BrandName = brandName;
+                _dbContext.SaveChanges();
+                return true;
+            }
+            return false;
+        }
     }
 }

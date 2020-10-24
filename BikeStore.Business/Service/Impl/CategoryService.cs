@@ -4,6 +4,7 @@ using BikeStore.Model.Request;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BikeStore.Business.Service.Impl
 {
@@ -36,9 +37,9 @@ namespace BikeStore.Business.Service.Impl
             return false;
         }
 
-        public IEnumerable<Categories> GetAll()
+        public async Task<IEnumerable<Categories>> GetAll()
         {
-            return _unitOfWork.CategoriesRepository.GetAll();
+            return await _unitOfWork.CategoriesRepository.GetAll();
         }
 
         public Categories GetById(int Id)

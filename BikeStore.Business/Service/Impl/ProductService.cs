@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using BikeStore.Data.Models;
 using BikeStore.Data.Repositories.UnitOfWork;
 using BikeStore.Model.Filters;
@@ -48,13 +49,15 @@ namespace BikeStore.Business.Service.Impl
             return _unitOfWork.ProductsRepository.GetProductDetailsById(Id);
         }
 
-        public BaseFilterResponse<Products> GetProductsFiltered(ProductsFilter productsFilter)
+        public async Task<BaseFilterResponse<Products>> GetProductsFiltered(ProductsFilter productsFilter)
         {
+            var totalRecords = await _unitOfWork.ProductsRepository.GetAll();
+
             BaseFilterResponse<Products> objResponse = new BaseFilterResponse<Products> 
             {
                 PageNumber = productsFilter.currentpage,
                 PageSize = productsFilter.recordsperpage,
-                TotalRecords = _unitOfWork.ProductsRepository.GetAll().Count(),
+                TotalRecords = totalRecords.Count(),
                 data = _unitOfWork.ProductsRepository.GetProductsFiltered(productsFilter)
             };
             

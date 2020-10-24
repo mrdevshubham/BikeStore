@@ -5,13 +5,14 @@ using BikeStore.Model.Response;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BikeStore.Business.Service
 {
     public interface IProductService
     {
         IEnumerable<Products> GetAll(int Page, int TotalRecordsPerPage);
-        BaseFilterResponse<Products> GetProductsFiltered(ProductsFilter productsFilter);
+        Task<BaseFilterResponse<Products>> GetProductsFiltered(ProductsFilter productsFilter);
         Products GetById(int Id);
         Products Add(Products product);
         bool Delete(int Id);

@@ -22,11 +22,11 @@ namespace BikeStore.Controllers
             this._mapper = mapper;
         }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-            return Ok(_storeService.GetAll());
-        }
+        //[HttpGet]
+        //public IActionResult Get()
+        //{
+        //    return Ok(_storeService.GetAll());
+        //}
 
         [HttpGet("{Id}")]
         public IActionResult Get(int Id)

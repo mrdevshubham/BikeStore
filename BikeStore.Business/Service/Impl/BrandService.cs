@@ -4,6 +4,7 @@ using BikeStore.Model.Request;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BikeStore.Business.Service.Impl
 {
@@ -16,9 +17,9 @@ namespace BikeStore.Business.Service.Impl
             this._unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<Brands> GetAll()
+        public async Task<IEnumerable<Brands>> GetAll()
         {
-            return _unitOfWork.BrandRepository.GetAll();
+            return await _unitOfWork.BrandRepository.GetAll();
         }
 
         public Brands GetById(int Id)
@@ -49,5 +50,9 @@ namespace BikeStore.Business.Service.Impl
             return false;
         }
 
+        public bool Update(Brands brand)
+        {
+            return _unitOfWork.BrandRepository.UpdateBrand(brand.Id, brand.BrandName);
+        }
     }
 }

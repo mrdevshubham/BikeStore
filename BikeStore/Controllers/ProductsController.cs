@@ -38,9 +38,9 @@ namespace BikeStore.Controllers
         }
 
         [HttpGet("getproductsFiltered")]
-        public IActionResult Get([FromQuery]ProductsFilter productsFilter)
+        public async Task<IActionResult> Get([FromQuery]ProductsFilter productsFilter)
         {
-            return Ok(_productsService.GetProductsFiltered(productsFilter));
+            return Ok(await _productsService.GetProductsFiltered(productsFilter));
         }
 
         [HttpPost]

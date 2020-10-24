@@ -6,6 +6,8 @@ using BikeStore.Model.Request;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace BikeStore.Controllers
 {
@@ -27,10 +29,10 @@ namespace BikeStore.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
             _logger.LogInformation("Get All Brands...");
-            return Ok(_brandService.GetAll());
+            return Ok(await _brandService.GetAll());
         }
 
         [HttpGet("{Id}")]
@@ -43,6 +45,12 @@ namespace BikeStore.Controllers
         public IActionResult Post(BrandRequestModel brandRequestModel)
         {
             return Ok(_brandService.Add(_mapper.Map<Brands>(brandRequestModel)));
+        }
+
+        [HttpPost("UpdateBrand")]
+        public IActionResult PostUpdate(BrandRequestModel brandRequestModel)
+        {
+            return Ok(_brandService.Update(_mapper.Map<Brands>(brandRequestModel)));
         }
 
         [HttpDelete("{Id}")]

@@ -7,6 +7,7 @@ namespace BikeStore.Model.Request
 {
     public class BrandRequestModel
     {
+        public int Id { get; set; }
         public string BrandName { get; set; }
     }
 }

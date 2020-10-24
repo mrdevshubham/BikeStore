@@ -27,9 +27,9 @@ namespace BikeStore.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(_categoryService.GetAll());
+            return Ok(await _categoryService.GetAll());
         }
 
         [HttpGet("{Id}")]

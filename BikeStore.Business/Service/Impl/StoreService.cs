@@ -36,10 +36,10 @@ namespace BikeStore.Business.Service.Impl
             return false;
         }
 
-        public IEnumerable<Stores> GetAll()
-        {
-            return _unitOfWork.StoreRepository.GetAll();
-        }
+        //public IEnumerable<Stores> GetAll()
+        //{
+        //    return _unitOfWork.StoreRepository.GetAll();
+        //}
 
         public Stores GetById(int Id)
         {

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BikeStore.Data.Repositories.Generic
 {
@@ -40,9 +41,9 @@ namespace BikeStore.Data.Repositories.Generic
             }
         }
 
-        public IEnumerable<T> GetAll()
+        public async Task<IEnumerable<T>> GetAll()
         {
-            return _entity.ToList();
+            return await _entity.ToListAsync();
         }
 
         public IEnumerable<T> GetAll(int currentPage, int TotalRecorsPerPage)

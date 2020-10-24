@@ -9,5 +9,7 @@ namespace BikeStore.Data.Repositories
     public interface IBrandRepository : IGenericRepository<Brands>
     {
         Brands GetByName(string brandName);
+
+        bool UpdateBrand(int Id, string brandName);
     }
 }
