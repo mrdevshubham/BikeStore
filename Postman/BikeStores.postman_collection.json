@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "1bf60885-0ea9-462e-a526-dc9d40cfb8b7",
+		"name": "BikeStores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Brands",
+			"item": [
+				{
+					"name": "GetAllBrands",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Brands/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Brands",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBrandById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Brands/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Brands",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Brand",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"BrandName\" : \"Bianchi\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Brands/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Brands",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Brand",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Brands/12",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Brands",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "GetAllCatogories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Categories/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCategoryById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Categories/9",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Categories",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ProductName\" : \"Cruiser\",\r\n    \"ProductName\" : \"Cruiser\",\r\n    \"ProductName\" : \"Cruiser\",\r\n    \"ProductName\" : \"Cruiser\",\r\n    \"ProductName\" : \"Cruiser\",\r\n    \"ProductName\" : \"Cruiser\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Products/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Categories/8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Categories",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "GetAll-Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Products/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll-Products With Paging",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Products/getproductsFiltered/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								"getproductsFiltered",
+								""
+							],
+							"query": [
+								{
+									"key": "currentpage",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "recordsperpage",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Products/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ProductName\" : \"Bajaj Avenger Street 160\",\r\n    \"BrandId\" : 11,\r\n    \"CategoryId\" : 9,\r\n    \"ModelYear\" : 2015,\r\n    \"ListPrice\" : 5000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Products/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Products/323",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Products",
+								"323"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Stores",
+			"item": [
+				{
+					"name": "GetAllStores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Stores/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Stores",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetStoreById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Stores/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Stores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Store",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"StoreName\" : \"Tigmanshu Bajaj\",\r\n    \"Phone\" : \"9893456345\",\r\n    \"Email\" : \"tigmanshu.bajaj@gmail.com\",\r\n    \"Street\" : \"D Street\",\r\n    \"City\" : \"Banswara\",\r\n    \"State\" : \"Rajasthan\",\r\n    \"ZipCode\" : \"327001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/Stores/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Stores",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Store",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/Stores/5",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"Stores",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\" : \"shubham\",\r\n    \"password\" : \"shubham\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/api/Auth/Login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Auth",
+						"Login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Validate Token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/api/Auth/Validate?authToken=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidXNlcm5hbWUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbjEiLCJleHAiOjE2MDQzODMyMTksImlzcyI6IkJpa2VTdG9yZS5jb20iLCJhdWQiOiJCaWtlU3RvcmUuY29tIn0.cO7pXpBL-0EGTvV4H-Z3WO99oRNtdpxXthoo9CtbAUw",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"api",
+						"Auth",
+						"Validate"
+					],
+					"query": [
+						{
+							"key": "authToken",
+							"value": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidXNlcm5hbWUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbjEiLCJleHAiOjE2MDQzODMyMTksImlzcyI6IkJpa2VTdG9yZS5jb20iLCJhdWQiOiJCaWtlU3RvcmUuY29tIn0.cO7pXpBL-0EGTvV4H-Z3WO99oRNtdpxXthoo9CtbAUw"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
