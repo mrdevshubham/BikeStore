@@ -4,14 +4,14 @@ on: [push]
 
 jobs:
     run-shell-command:
-    runs-on: ubuntu-latest
-    steps:
-        - name: echo a string
-          run: echo "Hello World from shubham"
-        - name: multiline script
-          run: |
-              node-v
-              npm-v
+        runs-on: ubuntu-latest
+        steps:
+            - name: echo a string
+              run: echo "Hello World from shubham"
+            - name: multiline script
+              run: |
+                  node-v
+                  npm-v
     run-windows-command:
         runs-on: windows-latest
         steps:
