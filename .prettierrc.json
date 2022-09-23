@@ -1,0 +1,10 @@
+{
+  "bracketSpacing": true,
+  "insertPragma": false,
+  "printWidth": 100,
+  "requirePragma": false,
+  "trailingComma": "es5",
+  "tabWidth": 4,
+  "semi": false,
+  "singleQuote": true
+}
