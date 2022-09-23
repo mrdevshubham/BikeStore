@@ -8,9 +8,6 @@ jobs:
         steps:
             - name: echo a string
               run: echo "Hello World from shubham"
-            - name: multiline script
-              run: |
-                  npm-v
     run-windows-command:
         runs-on: windows-latest
         steps:
